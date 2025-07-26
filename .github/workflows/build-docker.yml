@@ -89,7 +89,7 @@ jobs:
           # Create the PR
           gh pr create \
             --repo $GITOPS_REPO \
-            --base $GITOPS_BRANCH \
+            --base master \
             --head $BRANCH \
             --title "Update image tag to ${{ steps.semver.outputs.version }}" \
             --body "Automatically created by CI"

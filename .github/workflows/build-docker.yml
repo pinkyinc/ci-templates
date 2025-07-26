@@ -66,7 +66,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          BUILDING_DOCKER_IMAGE=true docker build -f Dockerfile.production -t ${{ steps.image.outputs.value }}:${{ steps.semver.outputs.version }} .
+          docker build -f Dockerfile.production -t ${{ steps.image.outputs.value }}:${{ steps.semver.outputs.version }} .
           docker push $IMAGE_NAME:${{ steps.semver.outputs.version }}
 
       - name: Clone GitOps repo

@@ -106,8 +106,7 @@ jobs:
           gh pr merge \
             --repo ${{ inputs.gitops_repo }} \
             --delete-branch \
-            --squash \
-            --yes
+            --squash
         env:
           GH_TOKEN: ${{ secrets.GITOPS_REPO_TOKEN }}
 

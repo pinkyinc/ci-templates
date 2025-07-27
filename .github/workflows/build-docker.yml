@@ -83,7 +83,7 @@ jobs:
       - name: Update image tag in values.yaml
         run: |
           cd ${{ steps.gitops.outputs.repo_name }}
-          sed -i "s/^tag: .*/tag: \"${{ steps.semver.outputs.version }}\"/" helm-release/values.yaml
+          sed -i "s/tag: .*$/tag: ${{ steps.semver.outputs.version }}/" helm-release/values.yaml
 
       - name: Create PR in GitOps repo
         run: |

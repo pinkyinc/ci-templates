@@ -108,6 +108,8 @@ jobs:
             --delete-branch \
             --squash \
             --yes
+        env:
+          GH_TOKEN: ${{ secrets.GITOPS_REPO_TOKEN }}
 
       - name: Push Git tag
         run: |

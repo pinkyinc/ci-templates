@@ -103,7 +103,7 @@ jobs:
             --body "Automatically created by CI"
           
           # Merge the PR immediately
-          gh pr merge \
+          gh pr merge $BRANCH \
             --repo ${{ inputs.gitops_repo }} \
             --delete-branch \
             --squash
